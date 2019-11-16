@@ -1,0 +1,11 @@
+#INTERNAL_START
+on post-fs
+
+    # trustzone related interface
+    mknod /dev/trustzone c 197 0;
+    chmod 0666 /dev/trustzone
+    chown root media /dev/trustzone
+
+on boot
+
+#INTERNAL_END

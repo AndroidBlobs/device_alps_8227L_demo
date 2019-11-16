@@ -1,0 +1,93 @@
+#change partition permission
+/dev/block/platform/soc/11230000.mmc/by-name/BOOTIMG   0640    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/RECOVERY  0640    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/SECCFG    0660    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/PRO_INFO  0660    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/NVRAM     0660    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/MISC      0660    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/LOGO      0660    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/FRP       0660    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/ODMDTBO   0660    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/ODMDTBO_a 0660    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/ODMDTBO_b 0660    root    system
+/dev/block/platform/soc/11230000.mmc/by-name/KB        0660    root    drmrpc
+/dev/block/platform/soc/11230000.mmc/by-name/DKB       0660    root    drmrpc
+/dev/block/platform/soc/11230000.mmc/by-name/METAZONE  0660    root    system
+
+/dev/pvrsrvkm             0766   root       root
+/dev/pvr_sync           0766   root         root
+/dev/Vcodec             0660   media        system
+/dev/sec                0660   root         system
+/dev/preloader          0640   root         system
+/dev/misc               0660   root         system
+/dev/misc-sd            0640   root         system
+/dev/sec_ro             0640   root         system
+/dev/recovery           0640   root         system
+/dev/seccfg             0660   root         system
+/dev/block/mmcblk0      0660   root         system
+/dev/trustzone          0660   system         drmrpc
+/dev/devmap             0440   root         system
+/dev/mali               0666   system       graphics
+/dev/mali0              0666   system       graphics
+
+# Connectivity
+/dev/stpwmt               0660   system     system
+/dev/wmtdetect            0660   system     system
+
+# Metazone
+/dev/mtz                0666    root    system
+
+#atc_ipod_core read
+/dev/hidraw0            0666    root    root
+/dev/hidraw1            0666    root    root
+/dev/i2c-3              0666    root    root
+
+# BT
+/dev/stpbt                0660   bluetooth  bluetooth
+
+# GPS
+/dev/stpgps               0660   gps        gps
+/dev/gps                  0660   gps        system
+
+# ANT
+/dev/stpant               0660   system     system
+
+# WIFI
+#/dev/wmtWifi              0660   system     system
+/dev/wmtWifi              0660   wifi     wifi
+
+# FMRadio
+/dev/fm                   0666   media     media
+
+# NFC
+/dev/msr3110              0666   root       root
+/dev/mt6605               0660   nfc        radio
+
+# MTK BTIF driver
+/dev/btif                 0600   system     system
+
+# Display
+/dev/mtkfb_vsync		0666	system		graphics
+/dev/hdmitx				0664	media		system
+/dev/mtk_ovl			0440	system		system
+/dev/mtk_disp			0666	system		system
+/dev/graphics/fb0		0666	system		graphics
+
+#touch
+/dev/touch	0660	root	system
+/dev/hotknot	0660	root	system
+
+#dvr
+/dev/video*                  0666  system system
+
+# add the read write right of ttyUSB*
+/dev/bus/usb/*     	      0660   root       usb
+/dev/ttyUSB0              0660   radio      radio
+/dev/ttyUSB1              0660   radio      radio
+/dev/ttyUSB2              0660   radio      radio
+/dev/ttyUSB3              0660   radio      radio
+/dev/ttyUSB4              0660   radio      radio
+/dev/ttyMT0		  0666   system     system
+/dev/ttyMT1               0666   system     system
+/dev/ttyMT2               0666   system     system
+/dev/ttyMT3               0666   system     system

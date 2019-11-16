@@ -1,0 +1,82 @@
+#
+# from device/autochips/8227L_demo/system.prop
+#
+#
+# system.prop for generic sdk
+#
+
+ro.sf.lcd_density=160
+
+#support opengles 2.0 3.0 is 196608
+ro.opengles.version=131072
+
+ro.audio.silent=0
+
+# MTK, Infinity, 20090720 {
+wifi.interface=wlan0
+# MTK, Infinity, 20090720 }
+
+# MTK, mtk03034, 20101210 {
+ro.mediatek.wlan.wsc=1
+# MTK, mtk03034 20101210}
+# MTK, mtk03034, 20110318 {
+ro.mediatek.wlan.p2p=1
+# MTK, mtk03034 20110318}
+
+# MTK, mtk03034, 20101213 {
+mediatek.wlan.ctia=0
+# MTK, mtk03034 20101213}
+
+#
+wifi.tethering.interface=ap0
+#
+
+wifi.direct.interface=p2p0
+persist.atc.bt.volumesync=disable
+persist.atc.bt.inbandringtone=disable
+persist.atc.bt.pan=enable
+persist.atc.bt.transToPinyin=true
+persist.atc.bt.callfilter=disable
+#add for switch dualmic
+audio.dualmic=1
+
+# Switching Menu of Mass storage and MTP
+ro.sys.usb.storage.type=mtp
+
+# USB BICR function
+ro.sys.usb.bicr=no
+
+# USB Charge only function
+ro.sys.usb.charging.only=yes
+# disable ipo for development
+sys.ipo.disable=1
+
+# temporary enables NAV bar (soft keys)
+# atc move the prop to device.mk
+# qemu.hw.mainkeys=1
+
+ro.atc_adoptable_disk=ext_sdcard2
+
+# mediascanner
+persist.mediascanner.slpTimeMs=0
+persist.mediascanner.fileCnt=0
+persist.mediascan.foldlevel=8
+persist.mediascan.foldcnt=256
+persist.mediascanner.image.cnt=1500
+persist.mediascanner.video.cnt=500
+persist.mediascanner.audio.cnt=3000
+
+# mediascanner
+persist.mediascanner.thread.run=1
+# audio
+persist.audio.get.hpoffset=0
+#add by C.Wong runtime_permission
+ro.mtk_runtime_permission=1
+
+#add for mark backcar watermark
+runtime.watermark.config=0
+
+persist.sys.timezone=Asia/Shanghai
+
+
+#

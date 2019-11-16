@@ -1,0 +1,57 @@
+# MTK project .rc configure
+on post-fs-data
+#Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+#Set mlock resource to unlimited
+    setrlimit 8 4294967295 4294967295
+
+#Set boot state
+    chown system system /sys/boot/state
+    chmod 0664 /sys/boot/state
+
+# Audio whitelist
+    mkdir /data/misc/audio 0777 system system
+
+on boot
+    # Refer to http://source.android.com/devices/tech/storage/index.html
+    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
+    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
+    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
+    #           Developers expect data stored in these locations to be available over long periods of time."
+    # Therefore, if the target has the SD card slot in a battery compartment, we need to specify SECONDARY_STORAGE (*** UN-Comment the following command ***)
+    #
+    # export SECONDARY_STORAGE /storage/sdcard1
+#
+
+#
+# Connectivity related services (End)
+#
+
+on property:init.svc.bootanim=stopped
+start atc_ipod_core
+
+service atc_ipod_core /system/bin/atc_ipod_core
+    disabled
+    user system
+    group system
+
+service arm2_log_save /vendor/bin/save_arm2_log
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:persist.arm2_log_save=1
+start arm2_log_save
+
+on property:sys.suspend.state=1
+write /sys/boot/state "resume_end"
+
+on property:sys.suspend.state=2
+write /sys/boot/state "suspend_start"
+
+on property:sys.running.phase=shutdown
+restorecon --recursive /data/media/0/OTAPackage/
+

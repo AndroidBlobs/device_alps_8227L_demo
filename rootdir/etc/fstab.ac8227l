@@ -1,0 +1,52 @@
+/dev/block/platform/soc/11230000.mmc/by-name/ANDROID /system ext4 ro wait,recoveryonly
+/dev/block/platform/soc/11230000.mmc/by-name/VENDOR /vendor ext4 ro wait,recoveryonly
+/dev/block/platform/soc/11230000.mmc/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,discard autorecovery,wait,check,quota,resize,encryptable=footer
+
+
+
+
+
+
+
+/dev/block/platform/soc/11230000.mmc/by-name/CACHE /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,discard wait,check
+
+/dev/block/platform/soc/11230000.mmc/by-name/APD /apd ext4 noatime,nosuid,nodev,noauto_da_alloc,discard wait,check
+
+
+/dev/block/platform/soc/11230000.mmc/by-name/FRP /persistent emmc defaults defaults
+
+
+
+
+
+
+/dev/block/platform/soc/11230000.mmc/by-name/odmdtbo /odmdtbo emmc defaults defaults
+
+
+
+/dev/block/platform/soc/11230000.mmc/by-name/NVRAM /nvram emmc defaults defaults
+/dev/block/platform/soc/11230000.mmc/by-name/PRO_INFO /proinfo emmc defaults defaults
+/dev/block/platform/soc/11230000.mmc/by-name/UBOOT /bootloader emmc defaults defaults
+/dev/block/platform/soc/11230000.mmc/by-name/BOOTIMG /boot emmc defaults defaults
+
+
+
+/dev/block/platform/soc/11230000.mmc/by-name/MISC /misc emmc defaults defaults
+
+/dev/block/platform/soc/11230000.mmc/by-name/RECOVERY /recovery emmc defaults defaults
+/dev/block/platform/soc/11230000.mmc/by-name/LOGO /logo emmc defaults defaults
+/dev/block/platform/soc/11230000.mmc/by-name/EXPDB /expdb emmc defaults defaults
+/dev/block/platform/soc/11230000.mmc/by-name/SECCFG /seccfg emmc defaults defaults
+
+/dev/block/platform/soc/11230000.mmc/by-name/TEE1 /tee1 emmc defaults defaults
+/dev/block/platform/soc/11230000.mmc/by-name/TEE2 /tee2 emmc defaults defaults
+
+
+
+
+
+
+/devices/soc/11240000.mmc* auto vfat defaults voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/soc/11250000.mmc* auto vfat defaults voldmanaged=sdcard1:auto,encryptable=userdata
+
+/devices/platform/mt_usb* auto vfat defaults voldmanaged=usbotg:auto,encryptable=userdata
